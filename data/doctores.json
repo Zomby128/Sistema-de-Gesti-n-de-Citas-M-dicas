@@ -1,0 +1,42 @@
+[
+  {
+    "id": "D001",
+    "nombre": "Dr. Carlos Méndez",
+    "especialidad": "Cardiología",
+    "horarioInicio": "09:00",
+    "horarioFin": "17:00",
+    "diasDisponibles": ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"]
+  },
+  {
+    "id": "D002",
+    "nombre": "Dra. Elena Ruiz",
+    "especialidad": "Pediatría",
+    "horarioInicio": "08:00",
+    "horarioFin": "16:00",
+    "diasDisponibles": ["Lunes", "Martes", "Miércoles", "Jueves"]
+  },
+  {
+    "id": "D003",
+    "nombre": "Dr. Roberto Vargas",
+    "especialidad": "Dermatología",
+    "horarioInicio": "10:00",
+    "horarioFin": "18:00",
+    "diasDisponibles": ["Martes", "Miércoles", "Jueves", "Viernes"]
+  },
+  {
+    "id": "D004",
+    "nombre": "Dra. Sofía Herrera",
+    "especialidad": "Ginecología",
+    "horarioInicio": "07:00",
+    "horarioFin": "15:00",
+    "diasDisponibles": ["Lunes", "Miércoles", "Viernes"]
+  },
+  {
+    "id": "D005",
+    "nombre": "Dr. Miguel Ángel Torres",
+    "especialidad": "Ortopedia",
+    "horarioInicio": "08:30",
+    "horarioFin": "16:30",
+    "diasDisponibles": ["Lunes", "Martes", "Jueves", "Viernes"]
+  }
+]
