@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Citas Médicas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <!-- Barra de navegación superior -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <span>ClinicaMed</span>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <div class="nav-center">
+            <div class="nav-links">
+                <a href="#dashboard" class="nav-link active" data-section="dashboard">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#pacientes" class="nav-link" data-section="pacientes">
+                    <i class="fas fa-user-injured"></i>
+                    <span>Pacientes</span>
+                </a>
+                <a href="#doctores" class="nav-link" data-section="doctores">
+                    <i class="fas fa-user-md"></i>
+                    <span>Doctores</span>
+                </a>
+                <a href="#citas" class="nav-link" data-section="citas">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Citas</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="nav-right">
+            <div class="notification-bell" id="notificationBell">
+                <i class="fas fa-bell"></i>
+                <span class="notification-count" id="notificationCount">0</span>
+            </div>
+            <button class="theme-toggle" id="themeToggle" title="Cambiar tema">
+                <i class="fas fa-sun"></i>
+            </button>
+            <div class="user-menu">
+                <img src="https://ui-avatars.com/api/?name=Admin&background=4CAF50&color=fff" alt="Usuario">
+                <span>Administrador</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main class="main-content">
+        <!-- Sección Dashboard -->
+        <section id="dashboard" class="content-section active">
+            <div class="section-header">
+                <h1><i class="fas fa-home"></i> Dashboard</h1>
+                <p>Resumen general del sistema</p>
+            </div>
+
+            <!-- Tarjetas de estadísticas -->
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-icon patients">
+                        <i class="fas fa-user-injured"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalPacientes">0</h3>
+                        <p>Pacientes Registrados</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon doctors">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalDoctores">0</h3>
+                        <p>Doctores Activos</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon appointments">
+                        <i class="fas fa-calendar-day"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="citasHoy">0</h3>
+                        <p>Citas Hoy</p>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-icon upcoming">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="citasProximas">0</h3>
+                        <p>Próximas 24h</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Citas de Hoy -->
+            <div class="dashboard-section">
+                <div class="section-title">
+                    <h2><i class="fas fa-calendar-day"></i> Citas de Hoy</h2>
+                    <button class="btn btn-primary" id="newAppointmentBtn">
+                        <i class="fas fa-plus"></i> Nueva Cita
+                    </button>
+                </div>
+                
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Hora</th>
+                                <th>Paciente</th>
+                                <th>Doctor</th>
+                                <th>Especialidad</th>
+                                <th>Motivo</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="todayAppointments">
+                            <!-- Las citas se cargarán aquí -->
+                        </tbody>
+                    </table>
+                    <div id="noAppointmentsToday" class="empty-state">
+                        <i class="fas fa-calendar-times"></i>
+                        <p>No hay citas programadas para hoy</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Citas Próximas -->
+            <div class="dashboard-section">
+                <div class="section-title">
+                    <h2><i class="fas fa-clock"></i> Citas Próximas (24 horas)</h2>
+                </div>
+                <div class="upcoming-appointments" id="upcomingAppointments">
+                    <!-- Las citas próximas se cargarán aquí -->
+                </div>
+            </div>
+            
+            <!-- Gráficos del Dashboard -->
+            <div class="dashboard-section">
+                <div class="section-title">
+                    <h2><i class="fas fa-chart-line"></i> Estadísticas</h2>
+                </div>
+
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <h3>Citas - Últimos 12 meses</h3>
+                        <div style="position: relative; width: 100%; height: 300px;">
+                            <canvas id="monthlyAppointmentsChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-card small-kpi">
+                        <h3>Tasa de Cancelación (30d)</h3>
+                        <div class="kpi-value" id="cancelRate">--%</div>
+                        <p class="muted" id="cancelRateDetail"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Pacientes -->
+        <section id="pacientes" class="content-section">
+            <div class="section-header">
+                <h1><i class="fas fa-user-injured"></i> Gestión de Pacientes</h1>
+                <p>Administra los pacientes de la clínica</p>
+            </div>
+
+            <div class="action-bar">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchPatient" placeholder="Buscar paciente por nombre o ID">
+                </div>
+                <button class="btn btn-success" id="newPatientBtn">
+                    <i class="fas fa-plus"></i> Nuevo Paciente
+                </button>
+            </div>
+
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Edad</th>
+                            <th>Teléfono</th>
+                            <th>Email</th>
+                            <th>Fecha Registro</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="patientsTable">
+                        <!-- Los pacientes se cargarán aquí -->
+                    </tbody>
+                </table>
+                <div id="noPatients" class="empty-state">
+                    <i class="fas fa-users"></i>
+                    <p>No hay pacientes registrados</p>
+                    <button class="btn btn-success" id="addFirstPatient">
+                        <i class="fas fa-plus"></i> Registrar Primer Paciente
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Doctores -->
+        <section id="doctores" class="content-section">
+            <div class="section-header">
+                <h1><i class="fas fa-user-md"></i> Gestión de Doctores</h1>
+                <p>Administra los doctores de la clínica</p>
+            </div>
+
+            <div class="action-bar">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchDoctor" placeholder="Buscar doctor por nombre o especialidad">
+                </div>
+                <button class="btn btn-success" id="newDoctorBtn">
+                    <i class="fas fa-plus"></i> Nuevo Doctor
+                </button>
+            </div>
+
+            <div class="doctors-grid" id="doctorsGrid">
+                <!-- Los doctores se cargarán aquí -->
+            </div>
+            <div id="noDoctors" class="empty-state">
+                <i class="fas fa-user-md"></i>
+                <p>No hay doctores registrados</p>
+                <button class="btn btn-success" id="addFirstDoctor">
+                    <i class="fas fa-plus"></i> Registrar Primer Doctor
+                </button>
+            </div>
+        </section>
+
+        <!-- Sección Citas -->
+        <section id="citas" class="content-section">
+            <div class="section-header">
+                <h1><i class="fas fa-calendar-check"></i> Gestión de Citas</h1>
+                <p>Administra las citas médicas</p>
+            </div>
+
+            <div class="filters-bar">
+                <div class="filter-group">
+                    <label for="filterDate"><i class="fas fa-calendar"></i> Fecha:</label>
+                    <input type="date" id="filterDate">
+                </div>
+                <div class="filter-group">
+                    <label for="filterStatus"><i class="fas fa-circle"></i> Estado:</label>
+                    <select id="filterStatus">
+                        <option value="">Todos</option>
+                        <option value="programada">Programada</option>
+                        <option value="cancelada">Cancelada</option>
+                        <option value="completada">Completada</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="filterDoctor"><i class="fas fa-user-md"></i> Doctor:</label>
+                    <select id="filterDoctor">
+                        <option value="">Todos</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" id="newAppointmentSectionBtn">
+                    <i class="fas fa-plus"></i> Nueva Cita
+                </button>
+            </div>
+
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                            <th>Paciente</th>
+                            <th>Doctor</th>
+                            <th>Especialidad</th>
+                            <th>Motivo</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="appointmentsTable">
+                        <!-- Las citas se cargarán aquí -->
+                    </tbody>
+                </table>
+                <div id="noAppointments" class="empty-state">
+                    <i class="fas fa-calendar-times"></i>
+                    <p>No hay citas registradas</p>
+                    <button class="btn btn-primary" id="addFirstAppointment">
+                        <i class="fas fa-plus"></i> Agendar Primera Cita
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Container -->
+    <div id="modalContainer" class="modal-container"></div>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="js/theme.js"></script>
+    <script src="js/api.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/notifications.js"></script>
+    <script src="js/autocomplete.js"></script>
+    <script src="js/advanced-filters.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/pacientes.js"></script>
+    <script src="js/doctores.js"></script>
+    <script src="js/citas.js"></script>
+
+</body>
+</html>

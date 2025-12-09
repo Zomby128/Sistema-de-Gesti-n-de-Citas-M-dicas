@@ -1,0 +1,144 @@
+[
+  {
+    "id": "C001",
+    "pacienteId": "P001",
+    "doctorId": "D001",
+    "fecha": "2025-11-10",
+    "hora": "10:00",
+    "motivo": "Revisión general",
+    "estado": "programada",
+    "fechaCreacion": "2025-01-20T10:30:00.000Z"
+  },
+  {
+    "id": "C002",
+    "pacienteId": "P002",
+    "doctorId": "D002",
+    "fecha": "2025-11-11",
+    "hora": "11:00",
+    "motivo": "Control infantil",
+    "estado": "programada",
+    "fechaCreacion": "2025-01-20T11:15:00.000Z"
+  },
+  {
+    "id": "C003",
+    "pacienteId": "P003",
+    "doctorId": "D003",
+    "fecha": "2025-11-12",
+    "hora": "14:00",
+    "motivo": "Consulta dermatológica",
+    "estado": "cancelada",
+    "fechaCreacion": "2025-01-20T14:20:00.000Z",
+    "fechaCancelacion": "2025-01-21T09:10:00.000Z"
+  },
+  {
+    "id": "C004",
+    "pacienteId": "P004",
+    "doctorId": "D001",
+    "fecha": "2025-11-13",
+    "hora": "09:30",
+    "motivo": "Control cardíaco",
+    "estado": "programada",
+    "fechaCreacion": "2025-01-21T08:45:00.000Z"
+  },
+  {
+    "id": "C005",
+    "pacienteId": "P005",
+    "doctorId": "D004",
+    "fecha": "2025-11-14",
+    "hora": "12:00",
+    "motivo": "Consulta ginecológica",
+    "estado": "programada",
+    "fechaCreacion": "2025-01-21T13:30:00.000Z"
+  },
+  {
+    "id": "C006",
+    "pacienteId": "P001",
+    "doctorId": "D001",
+    "fecha": "2025-11-19",
+    "hora": "10:00",
+    "motivo": "Revisión cardíaca anual",
+    "estado": "cancelada",
+    "fechaCreacion": "2025-11-15T00:45:08.877Z",
+    "fechaCancelacion": "2025-11-15T02:05:26.130Z"
+  },
+  {
+    "id": "C007",
+    "pacienteId": "P002",
+    "doctorId": "D001",
+    "fecha": "2025-11-26",
+    "hora": "11:00",
+    "motivo": "Dolor en el pecho",
+    "estado": "programada",
+    "fechaCreacion": "2025-11-15T00:45:44.635Z"
+  },
+  {
+    "id": "C008",
+    "pacienteId": "P003",
+    "doctorId": "D001",
+    "fecha": "2025-11-26",
+    "hora": "14:00",
+    "motivo": "Control de presión arterial",
+    "estado": "programada",
+    "fechaCreacion": "2025-11-15T01:57:57.825Z"
+  },
+  {
+    "id": "C009",
+    "pacienteId": "P001",
+    "doctorId": "D002",
+    "fecha": "2025-11-27",
+    "hora": "09:00",
+    "motivo": "Consulta pediátrica familiar",
+    "estado": "programada",
+    "fechaCreacion": "2025-11-15T01:58:36.154Z"
+  },
+  {
+    "id": "C010",
+    "pacienteId": "P002",
+    "doctorId": "D002",
+    "fecha": "2025-11-21",
+    "hora": "15:00",
+    "motivo": "Control de niño sano",
+    "estado": "programada",
+    "fechaCreacion": "2025-11-15T01:59:35.919Z"
+  },
+  {
+    "id": "C011",
+    "pacienteId": "P003",
+    "doctorId": "D001",
+    "fecha": "2025-11-18",
+    "hora": "10:00",
+    "motivo": "Primera consulta",
+    "estado": "programada",
+    "fechaCreacion": "2025-11-15T02:01:13.687Z"
+  },
+  {
+    "id": "C012",
+    "pacienteId": "P001",
+    "doctorId": "D002",
+    "fecha": "2025-11-19",
+    "hora": "11:00",
+    "motivo": "Cita a cancelar",
+    "estado": "programada",
+    "fechaCreacion": "2025-11-15T02:04:10.811Z"
+  },
+  {
+    "id": "C013",
+    "pacienteId": "P002",
+    "doctorId": "D002",
+    "fecha": "2025-12-26",
+    "hora": "10:00",
+    "motivo": "Irritacion cuerpo",
+    "estado": "programada",
+    "fechaCreacion": "2025-11-20T03:34:51.180Z"
+  },
+  {
+    "id": "C014",
+    "pacienteId": "P002",
+    "doctorId": "D002",
+    "fecha": "2025-12-26",
+    "hora": "10:01",
+    "motivo": "Irritacion cuerpo",
+    "estado": "programada",
+    "fechaCreacion": "2025-11-20T03:35:16.798Z"
+  }
+]

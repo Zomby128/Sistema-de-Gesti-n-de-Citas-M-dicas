@@ -1,0 +1,82 @@
+[
+  {
+    "id": "P001",
+    "nombre": "María González",
+    "edad": 35,
+    "telefono": "555-0101",
+    "email": "maria.g@email.com",
+    "fechaRegistro": "2025-01-15"
+  },
+  {
+    "id": "P002",
+    "nombre": "Carlos Rodríguez",
+    "edad": 42,
+    "telefono": "555-0102",
+    "email": "carlos.r@email.com",
+    "fechaRegistro": "2025-01-16"
+  },
+  {
+    "id": "P003",
+    "nombre": "Ana Martínez",
+    "edad": 28,
+    "telefono": "555-0103",
+    "email": "ana.m@email.com",
+    "fechaRegistro": "2025-01-17"
+  },
+  {
+    "id": "P004",
+    "nombre": "Jorge López",
+    "edad": 65,
+    "telefono": "555-0104",
+    "email": "jorge.l@email.com",
+    "fechaRegistro": "2025-01-18"
+  },
+  {
+    "id": "P005",
+    "nombre": "Laura Sánchez",
+    "edad": 31,
+    "telefono": "555-0105",
+    "email": "laura.s@email.com",
+    "fechaRegistro": "2025-01-19"
+  },
+  {
+    "id": "P006",
+    "nombre": "Aldo Perez Lucero",
+    "edad": 26,
+    "telefono": "555-0106",
+    "email": "aldo.@email.com",
+    "fechaRegistro": "2025-11-13"
+  },
+  {
+    "id": "P007",
+    "nombre": "Laura Mendoza",
+    "edad": 45,
+    "telefono": "555-1007",
+    "email": "luciamendoza@email.com",
+    "fechaRegistro": "2025-11-15"
+  },
+  {
+    "id": "P008",
+    "nombre": "Maximiliano Granados",
+    "edad": 64,
+    "telefono": "555-1064",
+    "email": "maxig@email.com",
+    "fechaRegistro": "2025-11-15"
+  },
+  {
+    "id": "P009",
+    "nombre": "Alejandro Cosio",
+    "edad": 35,
+    "telefono": "666-5544",
+    "email": "alej@email.com",
+    "fechaRegistro": "2025-11-20"
+  },
+  {
+    "id": "P010",
+    "nombre": "Alejandro Cosio",
+    "edad": 35,
+    "telefono": "666-5544",
+    "email": "alej2@email.com",
+    "fechaRegistro": "2025-11-20"
+  }
+]
